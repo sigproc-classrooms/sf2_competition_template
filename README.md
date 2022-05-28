@@ -10,7 +10,7 @@ Your repository must provide the three functions within the `competition` module
 To help you get started, we've preloaded this template with an encoder that uses `jpegenc` and
 `jpegdec`, along with the `opthuff` argument to build the header.
 
-Note that this respository does not include a copy of `cued_sf2_lab`, but will find the version that you alraedy have installed.
+Note that this respository does not include a copy of [`cued_sf2_lab`](https://github.com/sigproc/cued_sf2_lab), but will find the version that you already have installed.
 As such, you **should not modify your `cued_sf2_lab`**, as the demonstrators will not have this version installed.
 If you need to make changes to the function in that package, you should copy the files into this repository.
 
@@ -26,3 +26,5 @@ python -m cued_sf2_lab.competition_runner competition thecompetition_image
 Where `competition` is the name of this directory.
 This will write out your decoded images as `png` files into the `outputs` directory, along with a `pickle` file containing your encoded data.
 If you right click out `outputs/summary.md` in VSCode and click "Open preview", you can see the competition results.
+
+When you push your code to github, this will happen automatically, and you will be able to see your images by clicking on the "Actions" tab!
