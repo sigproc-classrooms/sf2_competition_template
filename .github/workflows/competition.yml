@@ -1,0 +1,58 @@
+# This workflow runs the competition runner against the student code, and uploads the resulting images
+
+name: Competition runner
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Update pip
+      run: |
+        python -m pip install --upgrade pip
+    - name: Install my package
+      run: |
+        python -m pip install .
+    - name: Run competition checker
+      run: |
+        python -m cued_sf2_lab.competition_runner competition \
+          lighthouse \
+          bridge \
+          flamingo
+    - uses: actions/checkout@v3
+      if: ${{ always() && hashFiles('competition/outputs/summary.md') != '' }}
+      with:
+        path: outputs
+    - name: Upload images
+      if: ${{ always() && hashFiles('competition/outputs/summary.md') != '' }}
+      run: |
+        git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+        git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+        cd outputs
+        git checkout --orphan "images-$GITHUB_SHA"
+        git rm -rf .
+        cp -r ../competition/outputs/. .
+        rm .gitignore
+        git add .
+        git commit -m "Images for $GITHUB_REPOSITORY@$GITHUB_SHA"
+        git push origin HEAD:refs/images/for-$GITHUB_SHA
+        echo "Uploaded to: $(git rev-parse HEAD)"
+        # replace the relative urls with absolute urls
+        cat summary.md \
+          | sed -e "s@src=\"./@src=\"https://github.com/$GITHUB_REPOSITORY/blob/$(git rev-parse HEAD)/@g" \
+          | sed -e "s@href=\"./@href=\"https://github.com/$GITHUB_REPOSITORY/blob/$(git rev-parse HEAD)/@g" \
+          > $GITHUB_STEP_SUMMARY
+
+    - uses: codecov/codecov-action@v1
