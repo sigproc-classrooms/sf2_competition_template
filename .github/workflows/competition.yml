@@ -1,6 +1,7 @@
 # This workflow runs the competition runner against the student code, and uploads the resulting images
 
-name: Competition runner
+# this name must be exactly this for the points to be reported to github classroom
+name: Autograding
 
 on:
   push:
