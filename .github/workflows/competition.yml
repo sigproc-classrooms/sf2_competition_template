@@ -1,7 +1,6 @@
 # This workflow runs the competition runner against the student code, and uploads the resulting images
 
-# this name must be exactly this for the points to be reported to github classroom
-name: Autograding
+name: SF2 Competition Checker
 
 on:
   push:
@@ -11,7 +10,8 @@ on:
 
 jobs:
   build:
-
+    # this name must be exactly this for the points to be reported to github classroom
+    name: Autograding
     runs-on: ubuntu-latest
 
     steps:
