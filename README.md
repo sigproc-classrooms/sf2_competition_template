@@ -19,12 +19,14 @@ For development, you can import these functions in Jupyter with
 from competition import header_bits, encode, decode
 ```
 
-In the competition, we will run this using
-```bash
-python -m cued_sf2_lab.competition_runner competition thecompetition_image
-```
-Where `competition` is the name of this directory.
-This will write out your decoded images as `png` files into the `outputs` directory, along with a `pickle` file containing your encoded data.
-If you right click out `outputs/summary.md` in VSCode and click "Open preview", you can see the competition results.
+In the competition, we will call these functions with the appropriate inputs and outputs to generate the codewords, header, and decoded image.
+When you push your code to github, this will be done automatically by https://github.com/sigproc-classrooms/sf2_competition_actions!
+To see these results:
+* Click the green checkmark (or red cross) next to your commit message
+* Click "details" on the SF2 Competition job
+* Click the "🏠 summary" button on the top left
+* Scroll down to see the report
 
-When you push your code to github, this will happen automatically, and you will be able to see your images by clicking on the "Actions" tab!
+The readme in https://github.com/sigproc-classrooms/sf2_competition_action may be updated with more info during the competition.
+
+If you get a red cross and can't work out why, ask a demonstrator! This tool is experimental for 2022.
