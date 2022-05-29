@@ -20,7 +20,7 @@ from competition import header_bits, encode, decode
 ```
 
 In the competition, we will call these functions with the appropriate inputs and outputs to generate the codewords, header, and decoded image.
-When you push your code to github, this will be done automatically by https://github.com/sigproc-classrooms/sf2_competition_actions!
+When you push your code to github, this will be done automatically by https://github.com/sigproc-classrooms/sf2_competition_action!
 To see these results:
 * Click the green checkmark (or red cross) next to your commit message
 * Click "details" on the SF2 Competition job
