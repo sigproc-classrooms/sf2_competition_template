@@ -1,6 +1,6 @@
 # SF2 Competition entry
 
-This is a template repository for your competition entry.
+`sf2_competition_template` is a template repository for your competition entry.
 Your repository must provide the three functions within the `competition` module:
 
 * `header_bits`
