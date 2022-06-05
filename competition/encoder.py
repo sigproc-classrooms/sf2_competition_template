@@ -25,4 +25,5 @@ def encode(X: np.ndarray) -> Tuple[np.ndarray, HeaderType]:
     # replace this with your chosen encoding scheme. If you do not use a header,
     # then `return vlc, None`.
     vlc, hufftab = jpegenc(X, jpeg_quant_size, opthuff=True, log=False)
+    raise RuntimeError
     return vlc, hufftab
