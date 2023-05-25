@@ -16,7 +16,7 @@ To help you get started, we've preloaded this template with an encoder that uses
 
 Note that this respository does not include a copy of [`cued_sf2_lab`](https://github.com/sigproc/cued_sf2_lab), but will find the version that you already have installed.
 As such, you **should not modify your `cued_sf2_lab`**, as the demonstrators will not have this version installed.
-If you need to make changes to the function in that package, you should copy the files into this repository.
+If you need to make changes to a function in that package, you should copy the modified functions into this repository.
 
 For development, you can import these functions in Jupyter with
 ```python
@@ -33,6 +33,16 @@ To see these results:
 * Click "details" on the SF2 Competition job
 * Click the "🏠 summary" button on the top left
 * Scroll down to see the report
+
+### How should I test my code
+
+The best way to test your code is just to push it and look at the output described above!
+
+However, you can also use the `cued_sf2_compete` command line tool, which is [documented here](https://github.com/sigproc-classrooms/sf2_competition_action/blob/2023/README.md).
+
+### How do I install this locally
+
+If you don't want to use github codespaces, you can clone this repository and run `pip install -r requirements.txt`.
 
 ### How can I make `plt.show()` work in Github Codespaces?
 
