@@ -28,4 +28,4 @@ jobs:
         python -m pip install -r requirements.txt
 
     - name: Run competition checker
-      uses: sigproc-classrooms/sf2_competition_action@2022
+      uses: sigproc-classrooms/sf2_competition_action@2023
